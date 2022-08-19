@@ -1,22 +1,10 @@
-let cantidad = parseInt(prompt( "Cuantos productos desea agregar?"))
-let precio = 1200;
-let total = cantidad * precio;
 
-if (total>=1200) {
-    alert ("usted ha obtenido un descuento")
-    let precioDescontado=total*0.9
-    alert("tu precio con descuento es de $ "+precioDescontado)
-    agradecer();
+function saludar() {
+    alert("Bienvenido a nuestra pagina!!")
 }
+saludar();
 
-else if(total<1200) {
-    alert ("gracias por tu compra, el total es de $ "+total)
-}
-
-// FUNIONES
-function agradecer() {
-    alert("Muchas gracias por tu compra")
-}
+const carrito=[];
 
 function minitorta (nombre, tamaño, precio) {
     this.nombre=nombre;
@@ -24,10 +12,54 @@ function minitorta (nombre, tamaño, precio) {
     this.precio=precio;
 }
 
-const minitortaBrownie=new minitorta ("brownie, 10.10, 1200");
-const minitortaCheescake=new minitorta ("cheescake, 10.10, 1200");
-const minitortaTiramisu=new minitorta ("tiramisu, 10.10, 1200");
-const minitortaRicota=new minitorta ("ricota, 10.10, 900");
-const minitortaLemonpie=new minitorta ("Lemonpie, 10.10, 900");
+const MiniortaBrownie=new minitorta (">Brownie", "10.10", "1200");
+const MiniortaCheescake=new minitorta ("Cheescake", "10.10", "1200");
+const MiniortaRicota=new minitorta ("Ricota", "10.10", "900"); 
+const MiniortaChocotorta=new minitorta ("Chocotorta", "10.10", "1200");
+const MiniortaChocotortaMerengue=new minitorta ("ChocotortaMerengue", "10.10", "1200");
+const MiniortaLasagna=new minitorta ("Lasagna", "10.10", "1200");
+const MiniortaMousse=new minitorta ("Mousse", "10.10", "1200");
+const MiniortaOreoDDL=new minitorta ("OreoDDL", "10.10", "1200");
+const MiniortaOreoVainilla=new minitorta ("OreoVainilla", "10.10", "1200");
+const MiniortaTartaFrutos=new minitorta ("TartaFrutos", "10.10", "900");
+const MiniortaCocoDDL=new minitorta ("CocoDDL", "10.10", "900");
+const MiniortaLemonpie=new minitorta ("Lemonpie", "10.10", "900");
 
-console.log(minitortaRicota);
+
+let minitorta1=document.getElementById("MinitortaBrownie");
+let minitorta2=document.getElementById("MinitortaCheescake");
+let minitorta3=document.getElementById("MiniLemon");
+let minitorta4=document.getElementById("MinitortaRicota");
+let minitorta5=document.getElementById("MiniCocoDDL");
+let minitorta6=document.getElementById("MinitortaChocotorta");
+
+minitorta1.onclick=()=>{
+    alert("Agregaste un mini brownie al carrito");
+    carrito.push(MinitortaBrownie);
+    console.log(carrito);
+}
+minitorta2.onclick=()=>{
+    alert("Agregaste un mini cheescake al carrito");
+    carrito.push(MinitortaCheescake);
+    console.log(carrito);
+}
+minitorta3.onclick=()=>{
+    alert("Agregaste un mini lemon al carrito");
+    carrito.push(MiniLemon);
+    console.log(carrito);
+}
+minitorta4.onclick=()=>{
+    alert("Agregaste un mini ricota al carrito");
+    carrito.push(MinitortaRicota);
+    console.log(carrito);
+}
+minitorta5.onclick=()=>{
+    alert("Agregaste un mini cheescake de chocolate al carrito");
+    carrito.push(MiniCocoDDL);
+    console.log(carrito);
+}
+minitorta6.onclick=()=>{
+    alert("Agregaste un mini chocotorta al carrito");
+    carrito.push(MinitortaChocotorta);
+    console.log(carrito);
+}
