@@ -28,37 +28,67 @@ let minitorta5=document.getElementById("MiniCocoDDL");
 let minitorta6=document.getElementById("MinitortaChocotorta");
 
 minitorta1.onclick=()=>{
-    alert("Agregaste un mini brownie al carrito");
+    swal.fire({
+        title: "Se agrego un producto al carrito!",
+        text: "Agregaste un mini Brownie",
+        icon: "success",
+        button: "Aww yiss!",
+      });
     carrito.push(MinitortaBrownie);
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 minitorta2.onclick=()=>{
-    alert("Agregaste un mini cheescake al carrito");
+    swal.fire({
+        title: "Se agrego un producto al carrito!",
+        text: "Agregaste un mini Cheescake",
+        icon: "success",
+        button: "Aww yiss!",
+    });    
     carrito.push(MinitortaCheescake);
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 minitorta3.onclick=()=>{
-    alert("Agregaste un mini lemon al carrito");
+    swal.fire({
+        title: "Se agrego un producto al carrito!",
+        text: "Agregaste un mini Lemonpie",
+        icon: "success",
+        button: "Aww yiss!",
+    });    
     carrito.push(MiniLemon);
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 minitorta4.onclick=()=>{
-    alert("Agregaste un mini ricota al carrito");
+    swal.fire({
+        title: "Se agrego un producto al carrito!",
+        text: "Agregaste una mini Ricota",
+        icon: "success",
+        button: "Aww yiss!",
+    });    
     carrito.push(MinitortaRicota);
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 minitorta5.onclick=()=>{
-    alert("Agregaste un mini cheescake de chocolate al carrito");
+    swal.fire({
+        title: "Se agrego un producto al carrito!",
+        text: "Agregaste un mini Coco y dulce de leche",
+        icon: "success",
+        button: "Aww yiss!",
+    });    
     carrito.push(MiniCocoDDL);
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 minitorta6.onclick=()=>{
-    alert("Agregaste un mini chocotorta al carrito");
+    swal.fire({
+        title: "Se agrego un producto al carrito!",
+        text: "Agregaste una mini Chocotorta",
+        icon: "success",
+        button: "Aww yiss!",
+    });    
     carrito.push(MinitortaChocotorta);
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
