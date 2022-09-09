@@ -93,3 +93,13 @@ minitorta6.onclick=()=>{
     console.log(carrito);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
+
+function obtenerDatos(){
+    const URLGET="https://api.itbook.store/1.0/new";
+    fetch(URLGET)
+   .then (resultado => resultado.json())
+   .then ( libros => {
+    console.log(libros.books);
+         })
+    }
+  obtenerDatos();  
