@@ -189,13 +189,17 @@ footer {
   justify-content: center;
 }
 
-.img__producto {
+.img-producto {
   z-index: 1;
   object-fit: cover;
   transition: 0.5s;
   border-radius: 2%;
+  width: 390px
 }
-.img__producto:hover {
+.item-image {
+  width: 390px;
+}
+.img-producto2:hover {
   transform: scale(1.15);
   border-radius: 5%;
 }

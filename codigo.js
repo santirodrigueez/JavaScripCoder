@@ -1,105 +1,126 @@
 
-let carrito=[];
+  const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
+addToShoppingCartButtons.forEach((addToCartButton) => {
+  addToCartButton.addEventListener('click', addToCartClicked);
+});
 
-function minitorta (nombre, tamaño, precio) {
-    this.nombre=nombre;
-    this.tamaño=tamaño;
-    this.precio=precio;
-}
+const comprarButton = document.querySelector('.comprarButton');
+comprarButton.addEventListener('click', comprarButtonClicked);
 
-const MinitortaBrownie=new minitorta ("Brownie", "10.10", "1200");
-const MinitortaCheescake=new minitorta ("Cheescake", "10.10", "1200");
-const MinitortaRicota=new minitorta ("Ricota", "10.10", "900"); 
-const MinitortaChocotorta=new minitorta ("Chocotorta", "10.10", "1200");
-const MinitortaChocotortaMerengue=new minitorta ("ChocotortaMerengue", "10.10", "1200");
-const MinitortaLasagna=new minitorta ("Lasagna", "10.10", "1200");
-const MinitortaMousse=new minitorta ("Mousse", "10.10", "1200");
-const MinitortaOreoDDL=new minitorta ("OreoDDL", "10.10", "1200");
-const MinitortaOreoVainilla=new minitorta ("OreoVainilla", "10.10", "1200");
-const MinitortaTartaFrutos=new minitorta ("TartaFrutos", "10.10", "900");
-const MinitortaCocoDDL=new minitorta ("CocoDDL", "10.10", "900");
-const MinitortaLemonpie=new minitorta ("Lemonpie", "10.10", "900");
+const shoppingCartItemsContainer = document.querySelector(
+  '.shoppingCartItemsContainer'
+);
 
-let minitorta1=document.getElementById("MinitortaBrownie");
-let minitorta2=document.getElementById("MinitortaCheescake");
-let minitorta3=document.getElementById("MiniLemon");
-let minitorta4=document.getElementById("MinitortaRicota");
-let minitorta5=document.getElementById("MiniCocoDDL");
-let minitorta6=document.getElementById("MinitortaChocotorta");
+function addToCartClicked(event) {
+  const button = event.target;
+  const item = button.closest('.item');
 
-minitorta1.onclick=()=>{
-    swal.fire({
-        title: "Se agrego un producto al carrito!",
-        text: "Agregaste un mini Brownie",
-        icon: "success",
-        button: "Aww yiss!",
-      });
-    carrito.push(MinitortaBrownie);
-    console.log(carrito);
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
-minitorta2.onclick=()=>{
-    swal.fire({
-        title: "Se agrego un producto al carrito!",
-        text: "Agregaste un mini Cheescake",
-        icon: "success",
-        button: "Aww yiss!",
-    });    
-    carrito.push(MinitortaCheescake);
-    console.log(carrito);
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
-minitorta3.onclick=()=>{
-    swal.fire({
-        title: "Se agrego un producto al carrito!",
-        text: "Agregaste un mini Lemonpie",
-        icon: "success",
-        button: "Aww yiss!",
-    });    
-    carrito.push(MiniLemon);
-    console.log(carrito);
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
-minitorta4.onclick=()=>{
-    swal.fire({
-        title: "Se agrego un producto al carrito!",
-        text: "Agregaste una mini Ricota",
-        icon: "success",
-        button: "Aww yiss!",
-    });    
-    carrito.push(MinitortaRicota);
-    console.log(carrito);
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
-minitorta5.onclick=()=>{
-    swal.fire({
-        title: "Se agrego un producto al carrito!",
-        text: "Agregaste un mini Coco y dulce de leche",
-        icon: "success",
-        button: "Aww yiss!",
-    });    
-    carrito.push(MiniCocoDDL);
-    console.log(carrito);
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
-minitorta6.onclick=()=>{
-    swal.fire({
-        title: "Se agrego un producto al carrito!",
-        text: "Agregaste una mini Chocotorta",
-        icon: "success",
-        button: "Aww yiss!",
-    });    
-    carrito.push(MinitortaChocotorta);
-    console.log(carrito);
-    localStorage.setItem("carrito",JSON.stringify(carrito));
+  const itemTitle = item.querySelector('.item-title').textContent;
+  const itemPrice = item.querySelector('.item-price').textContent;
+  const itemImage = item.querySelector('.img-producto').src;
+
+  addItemToShoppingCart(itemTitle, itemPrice, itemImage);
 }
 
-function obtenerDatos(){
-    const URLGET="https://api.itbook.store/1.0/new";
-    fetch(URLGET)
-   .then (resultado => resultado.json())
-   .then ( libros => {
-    console.log(libros.books);
-         })
+function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
+    'shoppingCartItemTitle'
+  );
+  for (let i = 0; i < elementsTitle.length; i++) {
+    if (elementsTitle[i].innerText === itemTitle) {
+      let elementQuantity = elementsTitle[
+        i
+      ].parentElement.parentElement.parentElement.querySelector(
+        '.shoppingCartItemQuantity'
+      );
+      elementQuantity.value++;
+      $('.toast').toast('show');
+      updateShoppingCartTotal();
+      return;
     }
-  obtenerDatos();  
+  }
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Agregaste al carrito exitosamente!',
+    showConfirmButton: false,
+    timer: 1500
+  })
+  const shoppingCartRow = document.createElement('div');
+  const shoppingCartContent = `
+  <div class="row shoppingCartItem">
+        <div class="col-6">
+            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <img src=${itemImage} class="img-producto shopping-cart-image">
+                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div
+                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                    value="1">
+                <button class="btn btn-danger buttonDelete" type="button">X</button>
+            </div>
+        </div>
+    </div>`;
+  shoppingCartRow.innerHTML = shoppingCartContent;
+  shoppingCartItemsContainer.append(shoppingCartRow);
+
+  shoppingCartRow
+    .querySelector('.buttonDelete')
+    .addEventListener('click', removeShoppingCartItem);
+
+  shoppingCartRow
+    .querySelector('.shoppingCartItemQuantity')
+    .addEventListener('change', quantityChanged);
+
+  updateShoppingCartTotal();
+}
+
+function updateShoppingCartTotal() {
+  let total = 0;
+  const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
+
+  const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+  shoppingCartItems.forEach((shoppingCartItem) => {
+    const shoppingCartItemPriceElement = shoppingCartItem.querySelector(
+      '.shoppingCartItemPrice'
+    );
+    const shoppingCartItemPrice = Number(
+      shoppingCartItemPriceElement.textContent.replace('$', '')
+    );
+    const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
+      '.shoppingCartItemQuantity'
+    );
+    const shoppingCartItemQuantity = Number(
+      shoppingCartItemQuantityElement.value
+    );
+    total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+  });
+  shoppingCartTotal.innerHTML = `${total.toFixed(2)}`;
+}
+
+function removeShoppingCartItem(event) {
+  const buttonClicked = event.target;
+  buttonClicked.closest('.shoppingCartItem').remove();
+  updateShoppingCartTotal();
+}
+
+function quantityChanged(event) {
+  const input = event.target;
+  input.value <= 0 ? (input.value = 1) : null;
+  updateShoppingCartTotal();
+}
+
+function comprarButtonClicked() {
+  shoppingCartItemsContainer.innerHTML = '';
+  updateShoppingCartTotal();
+}
+
