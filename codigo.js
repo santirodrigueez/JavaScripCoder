@@ -1,4 +1,185 @@
+//Cards
+let cards=document.getElementById("cards");
+cards.innerHTML=`
+                <div class="page__content"> 
+                  <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Brownie</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.brownie.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini cheescake</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.cheescake.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Cheescake de Chocolate</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.cheescake.choco.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Chocotorta</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.chocotorta.ddl.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
 
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Chocotorta de Merengue</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.chocotorta.merengue.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Lasagna</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.lasagna.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Lemon</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.lemon.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Marquise F.Rojos</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.marquise.frutos.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>    
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Marquise de Oreo</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.marquise.oreo.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Mousse</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.mousse.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Oreo DDL</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.oreo.ddl.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Oreo Vainilla</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.oreo.vainilla.png" alt="foto de producto">
+                                <h4 class="item-price">$1200</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Ricota</h3>
+                            <img class="img-producto img-producto2" src="../Imagenes/mini.ricotoa.png" alt="foto de producto">
+                                <h4 class="item-price">$900</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Tarta de Frutilla</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.tarta.frutilla.png" alt="foto de producto">
+                                <h4 class="item-price">$900</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Tarta de F.Rojos</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.tarta.frutos.png" alt="foto de producto">
+                                <h4 class="item-price">$900</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="page__content row">
+                    <div class="product__container">
+                        <div class="item shadow">
+                            <h3 class="item-title">Mini Coco DDL</h3>
+                            <img class="img-producto img-producto2" src="/Imagenes/mini.coco.dll.png" alt="foto de producto">
+                                <h4 class="item-price">$900</h4>
+                                <button class="button__add item-button addToCart">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;  
+     
   const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 addToShoppingCartButtons.forEach((addToCartButton) => {
   addToCartButton.addEventListener('click', addToCartClicked);
@@ -46,6 +227,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     showConfirmButton: false,
     timer: 1500
   })
+  //Carrito de compras
   const shoppingCartRow = document.createElement('div');
   const shoppingCartContent = `
   <div class="row shoppingCartItem">
@@ -83,6 +265,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
   updateShoppingCartTotal();
 }
 
+//Actualizar precio
 function updateShoppingCartTotal() {
   let total = 0;
   const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
@@ -107,18 +290,21 @@ function updateShoppingCartTotal() {
   shoppingCartTotal.innerHTML = `${total.toFixed(2)}`;
 }
 
+//Eliminar productos
 function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
   buttonClicked.closest('.shoppingCartItem').remove();
   updateShoppingCartTotal();
 }
 
+//Cambiar cantidad de productos
 function quantityChanged(event) {
   const input = event.target;
   input.value <= 0 ? (input.value = 1) : null;
   updateShoppingCartTotal();
 }
 
+// Borrar carrito luego de la compra
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
